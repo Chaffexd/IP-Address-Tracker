@@ -4,6 +4,9 @@ const locate = document.getElementById("location");
 const timezone = document.getElementById("timezone");
 const isp = document.getElementById("isp");
 
+const searchIp = document.querySelector("form");
+const inputIp = document.getElementById("searchIp");
+
 const api = "https://api.ipdata.co/?api-key=a518de11479a7774cc93a2ff374998f2dc01b4c7dfdc7f40a3abfd2c";
 fetch(api)
     .then(response => {
@@ -42,10 +45,6 @@ fetch(api)
         .setLngLat([longitude, latitude])
         .addTo(map);
 });
-
-        // Search for an IP
-        const searchIp = document.querySelector("form");
-        const inputIp = document.getElementById("searchIp");
 
         searchIp.onsubmit = (e) => {
             e.preventDefault();
